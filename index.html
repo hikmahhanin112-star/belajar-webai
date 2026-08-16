@@ -4,62 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Untuk Kamu ❤️</title>
+    <title>Untuk Sayang ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="hearts"></div>
+    <!-- Hati animasi di background -->
+    <div id="background-hearts"></div>
 
     <main class="container">
 
-        <div class="card">
+        <!-- =========================
+             HALAMAN PEMBUKA
+        ========================== -->
 
-            <div class="heart">❤️</div>
+        <section class="card opening" id="opening">
 
-            <h1>Untuk Kamu</h1>
+            <div class="heart-big">❤️</div>
 
-            <p class="subtitle">
-                Ada sesuatu yang ingin aku sampaikan...
+            <p class="small-text">
+                Ada sesuatu untuk kamu...
             </p>
 
-            <button onclick="bukaPesan()">
-                💌 Buka Pesan
+            <h1>
+                Untuk Sayangku
+            </h1>
+
+            <p class="from">
+                Dari Ael ❤️
+            </p>
+
+            <p class="intro">
+                Ael membuat halaman kecil ini khusus untuk kamu.
+                Mungkin sederhana, tetapi semua yang ada di sini
+                dibuat dengan perasaan.
+            </p>
+
+            <button class="main-button" onclick="mulai()">
+                💌 Buka Untukku
             </button>
 
-            <div id="pesan" class="pesan">
-                <h2>Untuk orang spesialku ❤️</h2>
+        </section>
 
-                <p>
-                    Terima kasih sudah hadir di hidupku.
-                    Mungkin aku tidak selalu pandai mengungkapkan
-                    perasaanku, tapi aku ingin kamu tahu bahwa
-                    kamu adalah seseorang yang sangat berarti bagiku.
-                </p>
 
-                <p>
-                    Semoga kita bisa terus bersama,
-                    saling mendukung, saling mengerti,
-                    dan menciptakan banyak cerita indah.
-                </p>
+        <!-- =========================
+             SURAT CINTA
+        ========================== -->
 
-                <p class="akhir">
-                    Aku sayang kamu ❤️
-                </p>
+        <section class="card hidden" id="message">
+
+            <div class="heart-big">
+                💗
             </div>
 
-            <button class="love-button" onclick="tambahCinta()">
-                ❤️ Kirim Cinta
+            <h2>
+                Untuk Kamu, Sayang
+            </h2>
+
+            <div class="letter">
+
+                <p>
+                    Sayang...
+                </p>
+
+                <p>
+                    Terima kasih sudah hadir di hidup Ael.
+                    Terima kasih karena sudah memberikan warna,
+                    cerita, perhatian, tawa, dan begitu banyak
+                    kenangan yang tidak akan Ael lupakan.
+                </p>
+
+                <p>
+                    Mungkin Ael tidak selalu pandai mengungkapkan
+                    perasaan lewat kata-kata. Kadang Ael juga
+                    tidak tahu bagaimana cara menunjukkan semuanya.
+                    Tapi Ael ingin kamu tahu bahwa Ael sangat
+                    bersyukur bisa mengenal kamu.
+                </p>
+
+                <p>
+                    Terima kasih karena sudah mau menemani Ael,
+                    mendengarkan cerita Ael, memahami Ael,
+                    dan tetap berada di sisi Ael.
+                </p>
+
+                <p>
+                    Terima kasih untuk setiap perhatian kecil,
+                    setiap senyuman, setiap obrolan,
+                    dan setiap waktu yang kamu berikan.
+                </p>
+
+                <p>
+                    Mungkin perjalanan kita tidak selalu sempurna.
+                    Akan ada saat kita berbeda pendapat,
+                    ada saat kita lelah, dan ada saat keadaan
+                    tidak sesuai dengan yang kita harapkan.
+                </p>
+
+                <p>
+                    Tapi Ael ingin terus belajar menjadi seseorang
+                    yang lebih baik untuk kamu.
+                    Ael ingin kita saling menjaga,
+                    saling memahami, dan saling menguatkan.
+                </p>
+
+                <p class="special">
+                    Terima kasih sudah menjadi bagian
+                    dari hidup Ael. ❤️
+                </p>
+
+                <p>
+                    Semoga kita bisa terus membuat banyak cerita,
+                    banyak tawa, dan banyak kenangan indah bersama.
+                </p>
+
+                <p class="special">
+                    Ael sayang kamu. ❤️
+                </p>
+
+                <p class="signature">
+                    Dari Ael,<br>
+                    yang selalu menyayangimu ❤️
+                </p>
+
+            </div>
+
+            <button class="main-button" onclick="lanjutGame()">
+                💕 Lanjut
             </button>
 
-            <p id="jumlahCinta">❤️ 0 cinta</p>
+        </section>
 
-        </div>
+
+        <!-- =========================
+             GAME CINTA
+        ========================== -->
+
+        <section class="card hidden" id="game">
+
+            <div class="game-heart">
+                💖
+            </div>
+
+            <h2>
+                Sekarang Giliran Kamu
+            </h2>
+
+            <p class="game-text">
+                Ael punya satu pertanyaan penting untuk kamu.
+            </p>
+
+            <div class="question-box">
+
+                <h3>
+                    Apakah kamu mau terus sama Ael? ❤️
+                </h3>
+
+                <p>
+                    Jawab dengan jujur ya...
+                </p>
+
+                <div class="buttons-area">
+
+                    <button
+                        id="yesButton"
+                        class="yes-button"
+                        onclick="jawabIya()">
+                        ❤️ IYA
+                    </button>
+
+                    <button
+                        id="noButton"
+                        class="no-button"
+                        onclick="jawabTidak()">
+                        TIDAK
+                    </button>
+
+                </div>
+
+                <p id="hint"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HASIL
+        ========================== -->
+
+        <section class="card hidden" id="result">
+
+            <div class="celebration">
+                ❤️
+            </div>
+
+            <h1>
+                YES! ❤️
+            </h1>
+
+            <h2>
+                Kamu pilih Ael!
+            </h2>
+
+            <p class="result-text">
+                Terima kasih sudah memilih untuk tetap bersama Ael.
+            </p>
+
+            <p class="result-text">
+                Ael tidak menjanjikan hubungan ini akan selalu
+                sempurna. Tapi Ael akan selalu berusaha untuk
+                menjadi lebih baik dan menjaga apa yang kita punya.
+            </p>
+
+            <p class="result-text">
+                Saat kamu sedih, Ael ingin menjadi tempat untuk kamu
+                bercerita. Saat kamu bahagia, Ael ingin menjadi
+                salah satu orang yang ikut tersenyum bersama kamu.
+            </p>
+
+            <p class="result-text big-text">
+                Sama Ael terus ya? 🥺❤️
+            </p>
+
+            <button class="main-button" onclick="peluk()">
+                🤗 Peluk Ael
+            </button>
+
+            <div id="hugMessage"></div>
+
+        </section>
 
     </main>
 
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>

@@ -6,174 +6,343 @@
 
 body {
     min-height: 100vh;
+
     font-family: Arial, sans-serif;
 
-    background: linear-gradient(
-        135deg,
-        #ff758c,
-        #ff7eb3,
-        #c471ed
-    );
+    background:
+        radial-gradient(
+            circle at top,
+            #ffd6e4 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #c471ed
+        );
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    padding: 20px;
+
     overflow-x: hidden;
 }
 
+/* Container */
+
 .container {
     width: 100%;
-    max-width: 500px;
-    padding: 20px;
+    max-width: 520px;
+
+    position: relative;
+
+    z-index: 10;
 }
+
+/* Card */
 
 .card {
     background: rgba(255, 255, 255, 0.95);
 
     border-radius: 30px;
 
-    padding: 40px 25px;
+    padding: 40px 28px;
 
     text-align: center;
 
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.2);
 
-    animation: muncul 1s ease;
+    animation: appear 0.8s ease;
 }
 
-.heart {
-    font-size: 70px;
+.hidden {
+    display: none;
+}
 
-    animation:
-        detak 1.2s infinite;
+/* Opening */
+
+.heart-big {
+    font-size: 80px;
+
+    animation: heartbeat 1.3s infinite;
+}
+
+.small-text {
+    color: #999;
+
+    margin-top: 10px;
 }
 
 h1 {
-    margin-top: 10px;
+    color: #e91e63;
 
     font-size: 38px;
 
-    color: #e91e63;
+    margin: 12px 0;
 }
 
-.subtitle {
-    margin: 15px 0 25px;
+h2 {
+    color: #e91e63;
 
+    margin: 15px 0;
+}
+
+.from {
+    color: #e91e63;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+.intro {
     color: #666;
 
-    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 25px;
 }
 
-button {
-    border: none;
+/* Semua tombol */
 
-    padding: 14px 25px;
+.main-button,
+.yes-button,
+.no-button {
+    border: none;
 
     border-radius: 30px;
 
-    background: #e91e63;
-
-    color: white;
+    padding: 14px 25px;
 
     font-size: 16px;
 
     cursor: pointer;
 
     transition: 0.3s;
-
-    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
 }
 
-button:hover {
+/* Tombol utama */
+
+.main-button {
+    background: #e91e63;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.3);
+}
+
+.main-button:hover {
     transform: scale(1.05);
 
     background: #c2185b;
 }
 
-.pesan {
-    display: none;
+/* Surat */
 
-    margin-top: 25px;
+.letter {
+    background: #fff2f7;
 
-    padding: 20px;
+    border-radius: 22px;
 
-    border-radius: 20px;
+    padding: 22px;
 
-    background: #fff0f5;
+    text-align: left;
+
+    line-height: 1.8;
 
     color: #555;
 
-    line-height: 1.7;
-
-    animation: muncul 0.7s ease;
+    margin: 20px 0;
 }
 
-.pesan h2 {
+.letter p {
+    margin-bottom: 15px;
+}
+
+.special {
     color: #e91e63;
 
-    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-.pesan p {
-    margin-bottom: 15px;
+.signature {
+    text-align: right;
+
+    font-style: italic;
+
+    color: #e91e63;
 }
 
-.akhir {
+/* Game */
+
+.game-heart {
+    font-size: 70px;
+
+    animation: heartbeat 1s infinite;
+}
+
+.game-text {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+.question-box {
+    background: #fff2f7;
+
+    border-radius: 25px;
+
+    padding: 25px;
+}
+
+.question-box h3 {
+    color: #d81b60;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+.question-box p {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+/* Area tombol */
+
+.buttons-area {
+    position: relative;
+
+    min-height: 110px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+/* IYA */
+
+.yes-button {
+    background: #e91e63;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.3);
+}
+
+.yes-button:hover {
+    transform: scale(1.1);
+}
+
+/* TIDAK */
+
+.no-button {
+    background: #ddd;
+
+    color: #555;
+
+    position: relative;
+}
+
+/* Pesan saat tidak */
+
+#hint {
+    color: #e91e63;
+
+    font-size: 14px;
+
+    min-height: 20px;
+
+    margin-top: 10px;
+}
+
+/* Hasil */
+
+.celebration {
+    font-size: 100px;
+
+    animation:
+        heartbeat 1s infinite,
+        rotateHeart 3s ease-in-out infinite;
+}
+
+.result-text {
+    color: #666;
+
+    line-height: 1.8;
+
+    margin: 15px 0;
+}
+
+.big-text {
+    color: #e91e63;
+
     font-size: 22px;
 
     font-weight: bold;
-
-    color: #e91e63;
 }
 
-.love-button {
-    margin-top: 25px;
-
-    background: #ff4081;
-}
-
-#jumlahCinta {
-    margin-top: 15px;
+#hugMessage {
+    margin-top: 20px;
 
     color: #e91e63;
+
+    font-size: 20px;
 
     font-weight: bold;
+
+    animation: appear 0.6s ease;
 }
 
-/* Animasi hati */
+/* Hati terbang */
 
-.hearts::before,
-.hearts::after {
-    content: "❤️ 💕 💗 💖 💓";
-
+.floating-heart {
     position: fixed;
 
-    font-size: 25px;
-
-    animation: jatuh 8s linear infinite;
-
-    opacity: 0.5;
+    bottom: -50px;
 
     pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        floatUp linear forwards;
 }
 
-.hearts::before {
-    left: 10%;
+/* Animasi muncul */
 
-    top: -50px;
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
 
-.hearts::after {
-    right: 10%;
+/* Detak jantung */
 
-    top: -100px;
+@keyframes heartbeat {
 
-    animation-delay: 3s;
-}
-
-@keyframes detak {
     0% {
         transform: scale(1);
     }
@@ -187,27 +356,41 @@ button:hover {
     }
 }
 
-@keyframes muncul {
-    from {
-        opacity: 0;
+/* Hati terbang */
 
-        transform: translateY(20px);
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
     }
 
     to {
-        opacity: 1;
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
 
-        transform: translateY(0);
+        opacity: 0;
     }
 }
 
-@keyframes jatuh {
-    from {
-        transform: translateY(-100px) rotate(0deg);
+/* Hati bergoyang */
+
+@keyframes rotateHeart {
+
+    0% {
+        transform: rotate(-8deg);
     }
 
-    to {
-        transform: translateY(110vh) rotate(360deg);
+    50% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(-8deg);
     }
 }
 
@@ -215,7 +398,7 @@ button:hover {
 
 @media (max-width: 500px) {
 
-    .container {
+    body {
         padding: 15px;
     }
 
@@ -229,11 +412,21 @@ button:hover {
         font-size: 32px;
     }
 
-    .heart {
-        font-size: 60px;
+    .heart-big {
+        font-size: 65px;
     }
 
-    .pesan {
+    .letter {
         font-size: 14px;
+
+        padding: 18px;
+    }
+
+    .question-box h3 {
+        font-size: 18px;
+    }
+
+    .buttons-area {
+        min-height: 120px;
     }
 }
