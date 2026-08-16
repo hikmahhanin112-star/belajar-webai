@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Saya</title>
+
+    <title>Untuk Kamu ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Halo 👋</h1>
-    <p>Ini adalah website pertama saya.</p>
 
-    <button onclick="alert('Halo!')">
-        Klik Saya
-    </button>
+    <div class="hearts"></div>
+
+    <main class="container">
+
+        <div class="card">
+
+            <div class="heart">❤️</div>
+
+            <h1>Untuk Kamu</h1>
+
+            <p class="subtitle">
+                Ada sesuatu yang ingin aku sampaikan...
+            </p>
+
+            <button onclick="bukaPesan()">
+                💌 Buka Pesan
+            </button>
+
+            <div id="pesan" class="pesan">
+                <h2>Untuk orang spesialku ❤️</h2>
+
+                <p>
+                    Terima kasih sudah hadir di hidupku.
+                    Mungkin aku tidak selalu pandai mengungkapkan
+                    perasaanku, tapi aku ingin kamu tahu bahwa
+                    kamu adalah seseorang yang sangat berarti bagiku.
+                </p>
+
+                <p>
+                    Semoga kita bisa terus bersama,
+                    saling mendukung, saling mengerti,
+                    dan menciptakan banyak cerita indah.
+                </p>
+
+                <p class="akhir">
+                    Aku sayang kamu ❤️
+                </p>
+            </div>
+
+            <button class="love-button" onclick="tambahCinta()">
+                ❤️ Kirim Cinta
+            </button>
+
+            <p id="jumlahCinta">❤️ 0 cinta</p>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
